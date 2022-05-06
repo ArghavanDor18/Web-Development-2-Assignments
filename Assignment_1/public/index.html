@@ -1,0 +1,167 @@
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="code.js"></script>
+    <title>
+
+    </title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        main{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        nav {
+
+            background-color:  #005ce6;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            justify-content: space-between;
+            height: 48px;
+
+
+        }
+
+        /*main {
+            padding: 10px;
+            
+        }*/
+
+        * {
+            box-sizing: border-box;
+        }
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        #center {
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        /*.clearfix {
+            overflow: hidden;
+        }*/
+
+        /*.clearfix::after {
+            clear: both;
+            
+        }*/
+
+        nav a {
+            display: inline-block;
+            color: #fbfbfb;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            
+
+        }
+
+        nav a:hover {
+            background-color: #0039e6;
+            text-decoration: underline;
+        }
+        nav a:hover:not(.active){
+               background-color: #0039e6;
+        }
+        .active {
+        background-color: #002699;
+        }
+        .flex-container{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .images_group{
+            text-align: center;
+            flex: 1 0 33%;
+            margin-bottom: 10px;
+            margin-right: 4px;
+            border-radius: 20px;
+            border: 2px solid black;
+            gap: 10px;
+            background-color: lightgrey;
+        }
+        @media screen and (max-width: 550px) {
+            main, nav, #dummy_div{
+                flex-direction: column;
+            }
+        }
+
+        h1 {
+            margin: 0px;
+        }
+        header {
+               text-align: center;
+        }
+        footer{
+                text-align: center;
+                padding: 20px;
+                border: 3px solid #0039e6;
+                background-color: #ffd633;
+                color: #0039e6;
+        }
+        footer a{
+               color: #fbfbfb;
+               text-align: center;
+               text-decoration: none;
+               padding: 7px;
+               background-color: #0039e6;
+           }
+        footer a:hover{
+            background-color: #002db3;
+            text-decoration: underline;
+        }
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #dummy_div{
+            display: flex;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png">
+        </header>
+        <nav>
+            <a href="https://pokeapi.co/">     
+                <div id="pokemon_header">   
+                    <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" width="100%" height="33">
+                </div>  
+            </a>
+           <div id="pokemon_nav">
+            <a class="active" href="https://pokeapi.co/">
+                Home
+            </a>
+            <a href="https://pokeapi.co/about">
+                About
+            </a>
+            <a href="https://pokeapi.co/docs/v2">
+                API v2
+            </a>
+            <a href="https://pokeapi.co/docs/graphql">
+                GraphQL v1beta
+            </a>
+            
+            <a href="search.html">Search</a>
+            
+            </div>
+            
+        </nav>
+        <main>
+            
+        </main>
+        <footer>
+            <a href="https://pokeapi.co/docs/v1">READ MORE ON POKEMONS</a>
+        </footer>
+    </body>
+</html>
