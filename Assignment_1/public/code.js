@@ -13,9 +13,12 @@ function processPokeResp(data){
 async function loadNineImages() {
     to_add += `<div class="flex-container">`
     for (i = 1; i <= 9; i++) { // Nine times
-        //if (i % 3 == 1) { // only when i= 1, 4, 7
+        
             to_add += `<div class="images_group">`
-        //}
+       
+        
+        
+    
         // 1 - generate random numbers
         x = Math.floor(Math.random() * 100) + 1
         // 2 - init a AJAX request to pokeapi.co
@@ -24,12 +27,9 @@ async function loadNineImages() {
             url: `https://pokeapi.co/api/v2/pokemon/${x}/`,
             success: processPokeResp
         })
-        //to_add += ` <div class="image_container"> <img src="${data.sprites.other["official-artwork"].front_default}> </div>`
-
-        //if (i % 3 == 0) { // only when i= 3, 6, 9
+        
         
             to_add += `</div>`
-        //}
     }
     to_add += `</div>`
     jQuery("main").append(to_add)

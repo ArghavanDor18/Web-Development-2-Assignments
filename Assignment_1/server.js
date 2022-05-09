@@ -34,7 +34,8 @@ app.get('/profile/:id', function (req, res) {
             res.render("profile.ejs", {
                 "id": req.params.id,
                 "name": data.name,
-                "hp": tmp[0]
+                "hp": tmp[0],
+                "type": data.types[0].type.name
             });
         })
     });
