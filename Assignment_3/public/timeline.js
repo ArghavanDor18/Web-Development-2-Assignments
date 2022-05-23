@@ -1,0 +1,53 @@
+
+function loadEvents() {
+    $.ajax({
+        url: "http://localhost:5000/timeline/getAllEvents",
+        type: "get",
+        success: (x) => {
+            console.log(x)
+            for (i = 0; i < x.length; i++) {
+
+                $("main").append(
+                    `
+                <p> 
+                    Event  Text - ${x[i].text}
+                <br> 
+                    Event  time - ${x[i].time}
+                <br> 
+                    Event  Hits - ${x[i].hits}
+                <br> 
+                    <button class="LikeButton" id="${x[i]["_id"]}"> Like! 
+                    </button> <button class="DeleteButton" id="${x[i]["_id"]}"> Delete </button>   
+                </p>
+                
+                `
+                )
+            }
+        }
+    })
+}
+
+function incrementHitsByOne(){
+    x = this.id
+    $.ajax({
+        url:`http://localhost:5000/timeline/increaseHits/${x}`,
+        type:"get",
+        success: (e)=>{console.log(e)}
+    })
+}
+function deleteEvents(){
+    x = this.id
+    $.ajax({
+        url: `http://localhost:5000/timeline/deleteOne/${x}`,
+        type: "get",
+        success: (e)=>{console.log(e)}
+    })
+}
+
+function setup() {
+    loadEvents()
+    $("body").on('click', '.DeleteButton', deleteEvents)
+    $("body").on('click', '.LikeButton', incrementHitsByOne)
+}
+
+$(document).ready(setup) 
