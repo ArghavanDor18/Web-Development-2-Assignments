@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        nav {
+               background-color:  #005ce6;
+               display: flex;
+               flex-direction: row-reverse;
+               justify-content: center;
+               justify-content: space-between;
+               height: 48px;
+            }
+            nav a{
+                display: inline-block;
+                color: #fbfbfb;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+           }
+           nav a:hover{
+               background-color: #0039e6;
+               text-decoration: underline;
+           }
+           nav a:hover:not(.active){
+               background-color: #0039e6;
+           }
+           .active {
+               background-color: #002699;
+           }
+           header {
+               text-align: center;
+           }
+           .images{
+               text-align: center;
+               background-color: white;
+               display: flex;
+               flex-flow: row;
+               /*flex: 1 0 33%;*/
+               max-width: 500px;
+               margin-bottom: 10px;
+               margin-right: 4px;
+               border-radius: 20px;
+               border: 2px solid black;
+               gap: 10px;
+
+           }
+           footer{
+                text-align: center;
+                padding: 20px;
+                border: 3px solid #0039e6;
+                background-color: #ffd633;
+                color: #0039e6;
+           }
+           footer a{
+               color: #fbfbfb;
+               text-align: center;
+               text-decoration: none;
+               padding: 7px;
+               background-color: #0039e6;
+           }
+           footer a:hover{
+               background-color: #002db3;
+               text-decoration: underline;
+           }
+           * {
+               font-family: Arial, Helvetica, sans-serif;
+           }
+    </style>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script src="timeline.js"></script>
+</head>
+
+<body>
+    <h1>
+        Welcome to this GLOBAL timeline
+    </h1>
+    <nav>
+        <a href="https://pokeapi.co/">     
+            <div id="pokemon_header">   
+                <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" width="100%" height="33">
+            </div>  
+        </a>
+       <div id="pokemon_nav">
+        <a class="active" href="index.html">
+            Home
+        </a>
+        <a href="https://pokeapi.co/about">
+            About
+        </a>
+        <a href="https://pokeapi.co/docs/v2">
+            API v2
+        </a>
+        <a href="https://pokeapi.co/docs/graphql">
+            GraphQL v1beta
+        </a>
+        
+        <a href="search.html">Search</a>
+
+        <a href="timeline.html">Timeline</a>
+
+        <a href="store.html">Store</a>
+        
+        </div>
+        
+    </nav>
+    <main>
+
+    </main>
+    <footer>
+        <a href="https://pokeapi.co/docs/v1">READ MORE ON POKEMONS</a>
+    </footer>
+</body>
+
+</html> 
