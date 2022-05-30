@@ -11,6 +11,7 @@ function userLogin(req) {
         },
         success: (res) => {
             window.location.href="/userprofile.html"
+           //window.location.href="/index.html"
         }
     })
 }

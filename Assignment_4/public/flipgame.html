@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="flipgame.css">
+    <title>Flip Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="flipgame.js"></script>
+    <style>
+        nav {
+        background-color: #005ce6;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        justify-content: space-between;
+        height: 48px;
+      }
+      nav a {
+        display: inline-block;
+        color: #fbfbfb;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        background-color: #0039e6;
+        text-decoration: underline;
+      }
+      nav a:hover:not(.active) {
+        background-color: #0039e6;
+      }
+      .active {
+        background-color: #002699;
+      }
+      header {
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        border: 3px solid #0039e6;
+        background-color: #ffd633;
+        color: #0039e6;
+      }
+      footer a {
+        color: #fbfbfb;
+        text-align: center;
+        text-decoration: none;
+        padding: 7px;
+        background-color: #0039e6;
+      }
+      footer a:hover {
+        background-color: #002db3;
+        text-decoration: underline;
+      }
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        margin: 0px;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+        <a href="https://pokeapi.co/">     
+            <div id="pokemon_header">   
+                <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" >
+            </div>  
+        </a>
+       <div id="pokemon_nav">
+        <a href="index.html">
+            Home
+        </a>
+        <a href="search.html">Search</a>
+
+        <a href="timeline.html">Timeline</a>
+
+        <a href="store.html">Store</a>
+
+        <a class="active" href="flipgame.html">Memory Game</a>
+        </div>
+    </nav>
+    <main>
+    
+    </main>
+  </body>
+</html>

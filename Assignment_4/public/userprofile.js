@@ -1,10 +1,10 @@
 function userInfo() {
     $.ajax({
-        url: "http://localhost:5000/userInfo/:username",
+        url: "http://localhost:5000/userprofile.html",
         type: "Get",
         success: (user) => {
             $('main').append(`
-            <p>Welcome, ${user[0].firstName} <p>
+            <p>Welcome, ${user[0].username} <p>
             `)
             $('main').append(`${user[0].username} has purchased the following: <br>`)
             for (i = 0; i < user[0].shoppingCart.length; i++) {

@@ -13,10 +13,24 @@
             border: 2px solid black;
             border-radius: 90px;
             width: 500px;
-            height: 900px;
+            height: 950px;
             text-align: center;
 
 
+        }
+        a{
+            border: 2px outset black;
+            text-decoration: none;
+            background-color: limegreen;
+            border-radius: 10px;
+            font-size: 70px;
+            color: black;
+
+
+        }
+        a:hover{
+            background-color: lightblue;
+            color: blue;
         }
     </style>
 
@@ -32,12 +46,17 @@
         pokemon type: <%= type %>
 
         <br>
+        
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%=id%>.png" alt="">
         <br>
         
         The HP is  
         <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+        card price: <%= price %>
+        <br><button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
     </main>
+    <br>
+    <a href="/search.html">Back to Search!</a>
 </body>
 
 </html> 

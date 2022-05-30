@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+var session = require('express-session');
 
 const https = require("https");
 var bodyParser = require("body-parser");
@@ -10,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.static('./public'));
-
+app.use(session({secret: 'ssshhhhh', saveUninitialized: true, resave: true}));
 app.listen(5000, function (err) {
     if (err)
         console.log(err);
@@ -113,12 +114,25 @@ app.get('/profile/:id', function (req, res) {
             }).map((obj2)=>{
                 return obj2.base_stat
             })
-
+            if(req.params.id < 300){
+                price = 1.49
+            }else if (req.params.id >= 300 && req.params.id < 600) {
+                price = 1.99   
+            } else if(req.params.id >= 600 && req.params.id < 900) {
+                price = 2.49
+            }else{
+                req.params.id >= 900 && req.params.id < 1200
+                price = 2.99
+            }
+        {
+    }
             res.render("profile.ejs", {
                 "id": req.params.id,
                 "name": data.name,
                 "hp": tmp[0],
-                "type": data.types[0].type.name
+                "type": data.types[0].type.name,
+                "price": price
+                
             });
         })
     });
@@ -129,6 +143,7 @@ app.get('/profile/:id', function (req, res) {
 
 
 var session = require('express-session');
+//const { redirect } = require("express/lib/response");
 //const { json } = require('express/lib/response');
 
 // Use the session middleware
@@ -184,12 +199,12 @@ function auth(req, res, next){
     //console.log(req.session.authenticated)
     if (req.session.authenticated){
         console.log("/ home route got triggered!")
-        next()
+    next()
     //res.redirect('/userProfile/:name')
     //body = JSON.stringify(req.body)
     //console.log(req.body)
   
-      return
+     return
     } else {
         req.session.authenticated = false
         res.redirect("/login")
@@ -206,9 +221,10 @@ function auth(req, res, next){
 //res.end()
 }
 
-app.get('/', (req, res)=>{
+app.get('/', auth, (req, res)=>{
    if(req.session.authenticated) {
-       res.sendFile(__dirname + '/public/userprofile.html')
+    res.redirect('/')
+    //res.sendFile(__dirname + '/public/userprofile.html')
     }else{
         res.sendFile(__dirname + '/public/login.html')
     }
@@ -236,16 +252,18 @@ app.post('/login/', function (req, res) {
             req.session.authenticated = true
             req.session.user = req.body.username
             console.log("successful login")
-            res.redirect(`/userInfo/${req.session.user}`)
+            //res.redirect(`/userInfo/${req.session.user}`)
+            //res.redirect('/')
+            res.sendFile(__dirname + '/public/index.html')
             
     
     
 }
 })
 
-app.get('/userInfo/:username', function(req, res){
+app.get('/userProfile', function(req, res){
     username = req.session.username;
-
+    console.log("aleisy")
     user = users[users.indexOf(username)], (err, user) => {
         if (err){
             console.log(err);
